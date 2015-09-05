@@ -4,7 +4,7 @@
   "description": "This module creates _locales for Google Chrome's extensions and apps from a CSV file.",
   "main": "./lib",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha tests/*.js"
   },
   "author": "Pavel Rybin",
   "license": "ISC",
