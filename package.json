@@ -2,12 +2,16 @@
   "name": "csv-locales",
   "version": "1.0.0",
   "description": "This module creates _locales for Google Chrome's extensions and apps from a CSV file.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drfisher/csv-locales.git"
+  },
   "main": "./lib",
   "scripts": {
     "test": "node_modules/.bin/mocha tests/*.js"
   },
-  "author": "Pavel Rybin",
-  "license": "ISC",
+  "author": "Pavel Rybin <me@drfisher.ru>",
+  "license": "MIT",
   "dependencies": {
     "csv-parse": "^1.0.0",
     "fs-extra": "^0.23.1",
@@ -17,5 +21,6 @@
     "chai": "^3.2.0",
     "mocha": "^2.3.0",
     "object-recursive-iterator": "^1.0.2"
-  }
+  },
+  "keywords": ["_locale", "locale", "google", "chrome", "extension", "csv", "json"]
 }
