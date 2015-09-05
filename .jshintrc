@@ -15,5 +15,6 @@
   "loopfunc": true,
   "-W004": true,
   "-W030": true, // for yield* ...
-  "-W078": true // allow setter w/o getter
+  "-W078": true, // allow setter w/o getter
+  "-W106": true
 }
