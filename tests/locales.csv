@@ -1,0 +1,9 @@
+locales,,"ru
+(русский)","en
+(английский)"
+ext_name,message,Мое локализованное расширение,My localized extension
+,description,Название расширения,name of the extension
+ext_discription,message,Это пример краткого описания расширения,This is an example of extension's short description
+,description,Описание расширения,description of the extension
+options_title,message,Страницы настроек,Options
+,description,Заголовок страницы с настройками (для тега title),The title of a settings page (for the title tag)
