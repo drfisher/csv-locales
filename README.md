@@ -16,7 +16,7 @@ To create locales use a CSV file which generated from a spreadsheet with [this s
     
     var params = {
       csvPath: '/absolute/path/to/the/file/locales.csv',
-      dist: '/absolute/path/to/the/target/dir/_locales',
+      dirPath: '/absolute/path/to/the/target/dir/_locales',
       csvParse: {/* CSV parser option or null */}
     };
     
@@ -31,7 +31,7 @@ To create locales use a CSV file which generated from a spreadsheet with [this s
 ### Params available
 
 * `csvPath` - an absolute path to the CSV file with locales.
-* `dist` - an absolute path to the target directory. If it doesn't exist, it will be created.
+* `dirPath` - an absolute path to the target directory. If it doesn't exist, it will be created.
 * `csvParse` — a list of options for the [CSV parser](http://csv.adaltas.com/parse/).
 
 

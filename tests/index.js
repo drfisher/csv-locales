@@ -7,7 +7,7 @@ var getByPath = require('getbypath');
 
 var localeParams = {
   csvPath: 'locales.csv',
-  dist: '../tmp/_locales',
+  dirPath: '../tmp/_locales',
   debug: false
 };
 
@@ -70,7 +70,7 @@ function createLocales (params) {
 function clearLocales () {
   return new Promise(function (resolve, reject) {
     try {
-      fs.removeSync(localeParams.dist);
+      fs.removeSync(localeParams.dirPath);
       resolve();
     } catch (err) {
       reject(err);
@@ -88,7 +88,7 @@ describe('csv-locales', function () {
   // Make absolute paths in testParams
   before(function () {
     var dir = __dirname + path.sep;
-    ['csvPath', 'dist'].forEach(function (curPath) {
+    ['csvPath', 'dirPath'].forEach(function (curPath) {
       localeParams[curPath] = path.normalize(dir + localeParams[curPath]);
     });
   });
@@ -103,7 +103,7 @@ describe('csv-locales', function () {
       testParams.locales.every(function (localeName) {
         try {
           var jsonPath = path.normalize([
-            localeParams.dist, localeName, 'messages.json'
+            localeParams.dirPath, localeName, 'messages.json'
           ].join(path.sep));
           var json = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 
