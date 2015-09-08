@@ -1,6 +1,6 @@
 # csv-locales
 
-This module creates json files with n18i locales for Google Chrome extensions and applications from a CSV file.
+This module creates json files with [i18n locales](https://developer.chrome.com/extensions/i18n) for Google Chrome extensions and applications from a CSV file.
 
 
 ## Installation
