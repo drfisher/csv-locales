@@ -1,6 +1,6 @@
 {
   "name": "csv-locales",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "This module creates _locales for Google Chrome's extensions and apps from a CSV file.",
   "repository": {
     "type": "git",
