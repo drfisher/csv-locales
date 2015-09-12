@@ -18,15 +18,23 @@ var testParams = {
     en: {
       ext_name: {
         message: 'My localized extension',
-        description: 'name of the extension'
+        description: 'The title of the extension'
       },
       ext_discription: {
         message: 'This is an example of extension\'s short description',
-        description: 'description of the extension'
+        description: 'The description of the extension'
       },
       options_title: {
-        message: 'Options',
-        description: 'The title of a settings page (for the title tag)'
+        message: 'Options for $option$',
+        description: 'Options for a subject which mentioned in the $optionName$',
+        placeholders: {
+          optionName: {
+            content: '$1'
+          },
+          extraData: {
+            content: '$2'
+          }
+        }
       }
     },
     ru: {
@@ -36,11 +44,19 @@ var testParams = {
       },
       ext_discription: {
         message: 'Это пример краткого описания расширения',
-        description: 'Описание расширения'
+        description: ''
       },
       options_title: {
-        message: 'Страницы настроек',
-        description: 'Заголовок страницы с настройками (для тега title)'
+        message: 'Настройка $option$$extraData$',
+        description: 'Настройка переданного в $optionName$ параметра',
+        placeholders: {
+          optionName: {
+            content: '$1'
+          },
+          extraData: {
+            content: '$2'
+          }
+        }
       }
     }
   }
@@ -123,9 +139,10 @@ describe('csv-locales', function () {
     testParams.locales.forEach(function (localeName) {
       iterator.forAll(messages[localeName], function (path, key, obj) {
         if (typeof obj[key] === 'string') {
+          path = path.concat(key).join('.');
           assert.equal(
             obj[key],
-            getByPath(testParams.examples[localeName], path + '.' + key)
+            getByPath(testParams.examples[localeName], path)
           );
         }
       });

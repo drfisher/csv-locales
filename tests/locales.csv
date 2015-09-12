@@ -1,9 +1,12 @@
-locales,,"ru
-(русский)","en
+locales,,"ru 
+(русский)","en 
 (английский)"
 ext_name,message,Мое локализованное расширение,My localized extension
-,description,Название расширения,name of the extension
+,description,Название расширения,The title of the extension
+,placeholders,,
 ext_discription,message,Это пример краткого описания расширения,This is an example of extension's short description
-,description,Описание расширения,description of the extension
-options_title,message,Страницы настроек,Options
-,description,Заголовок страницы с настройками (для тега title),The title of a settings page (for the title tag)
+,description,,The description of the extension
+,placeholders,,
+options_title,message,Настройка $option$$extraData$,Options for $option$
+,description,Настройка переданного в $optionName$ параметра,Options for a subject which mentioned in the $optionName$
+,placeholders,(optionName:$1)(extraData:$2),(optionName:$1)
