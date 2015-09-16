@@ -6,8 +6,8 @@ var iterator = require('object-recursive-iterator');
 var getByPath = require('getbypath');
 
 var localeParams = {
-  csvPath: 'locales.csv',
-  dirPath: '../tmp/_locales',
+  csvPath: 'tests/locales.csv',
+  dirPath: 'tmp/_locales',
   debug: false
 };
 
@@ -101,14 +101,6 @@ describe('csv-locales', function () {
   var messages = {};
   var localesTotal = testParams.locales.length;
 
-  // Make absolute paths in testParams
-  before(function () {
-    var dir = __dirname + path.sep;
-    ['csvPath', 'dirPath'].forEach(function (curPath) {
-      localeParams[curPath] = path.normalize(dir + localeParams[curPath]);
-    });
-  });
-
   it('should works without errors', function () {
     return createLocales(localeParams);
   });
@@ -118,9 +110,9 @@ describe('csv-locales', function () {
       var count = 0;
       testParams.locales.every(function (localeName) {
         try {
-          var jsonPath = path.normalize([
-            localeParams.dirPath, localeName, 'messages.json'
-          ].join(path.sep));
+          var jsonPath = path.join(
+            process.cwd(), localeParams.dirPath, localeName, 'messages.json'
+          );
           var json = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
 
           assert.typeOf(json, 'object');
@@ -136,17 +128,21 @@ describe('csv-locales', function () {
     });
 
   it('should creates json with a valid structure', function () {
-    testParams.locales.forEach(function (localeName) {
-      iterator.forAll(messages[localeName], function (path, key, obj) {
-        if (typeof obj[key] === 'string') {
-          path = path.concat(key).join('.');
-          assert.equal(
-            obj[key],
-            getByPath(testParams.examples[localeName], path)
-          );
-        }
+    if (Object.keys(messages).length) {
+      testParams.locales.forEach(function (localeName) {
+        iterator.forAll(messages[localeName], function (path, key, obj) {
+          if (typeof obj[key] === 'string') {
+            path = path.concat(key).join('.');
+            assert.equal(
+              obj[key],
+              getByPath(testParams.examples[localeName], path)
+            );
+          }
+        });
       });
-    });
+    } else {
+      throw new Error('JSON was not created!');
+    }
   });
 
   // Clear after tests

@@ -17,8 +17,8 @@ You can use it as a [grunt task](https://www.npmjs.com/package/grunt-csv-locales
     var csvLocales = require('csv-locales');
     
     var params = {
-      csvPath: '/absolute/path/to/the/file/locales.csv',
-      dirPath: '/absolute/path/to/the/target/dir/_locales',
+      csvPath: 'path/to/the/file/locales.csv',
+      dirPath: 'path/to/the/target/dir/_locales',
       csvParse: {/* CSV parser option or null */}
     };
     
@@ -32,8 +32,8 @@ You can use it as a [grunt task](https://www.npmjs.com/package/grunt-csv-locales
 
 ### Params available
 
-* `csvPath` - an absolute path to the CSV file with locales.
-* `dirPath` - an absolute path to the target directory. If it doesn't exist, it will be created.
+* `csvPath` - a path to the CSV file with locales.
+* `dirPath` - a path to the target directory. If it doesn't exist, it will be created.
 * `csvParse` — a list of options for the [CSV parser](http://csv.adaltas.com/parse/).
 
 
