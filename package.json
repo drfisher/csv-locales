@@ -8,7 +8,7 @@
   },
   "main": "./lib",
   "scripts": {
-    "test": "node_modules/.bin/mocha tests/*.js"
+    "test": "mocha tests/*.js"
   },
   "author": "Pavel Rybin <me@drfisher.ru>",
   "license": "MIT",
