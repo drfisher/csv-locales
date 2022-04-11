@@ -8,19 +8,19 @@
   },
   "main": "./lib",
   "scripts": {
-    "test": "node_modules/.bin/mocha tests/*.js"
+    "test": "mocha tests/*.js"
   },
   "author": "Pavel Rybin <me@drfisher.ru>",
   "license": "MIT",
   "dependencies": {
-    "csv-parse": "^1.0.0",
+    "csv-parse": "^4.6.6",
     "extend-object": "^1.0.0",
     "fs-extra": "^0.23.1",
     "getbypath": "^1.1.0"
   },
   "devDependencies": {
     "chai": "^3.2.0",
-    "mocha": "^2.3.0",
+    "mocha": "^9.2.2",
     "object-recursive-iterator": "^1.0.2"
   },
   "keywords": [
